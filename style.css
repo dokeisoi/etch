@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    background-color: bisque;
+    gap: 5px;
+    padding: 10px;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+.upper {
+    width: fit-content;
+    background-color: blue;
+    display: flex;
+}
+
+.lower {
+    background-color: beige;
+    height: 30px;
+    width: 30px;
+    margin: 3px;
+}
