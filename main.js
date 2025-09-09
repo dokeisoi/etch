@@ -17,7 +17,16 @@ function appendAnotherDiv(number) {
             const div = document.createElement('div');
             
             div.style.backgroundColor = color;
-            div.addEventListener('mouseover', () => div.style.backgroundColor = paintColor);
+            div.addEventListener('mouseover', 
+                () => {
+                    div.style.backgroundColor = paintColor;
+                    let opacity = Number(div.style.opacity);
+                    if (!div.style.opacity) {
+                        div.style.opacity = 0.1;
+                    } else {
+                        div.style.opacity = opacity + 0.1;
+                    }
+                });
             div.classList.add('lower');
 
             document.querySelector(`.blue${i}`).append(div);
