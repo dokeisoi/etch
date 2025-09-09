@@ -1,5 +1,5 @@
 function appendDiv(number) {
-    for (i = 0; i < number; i++) {
+    for ( let i = 0; i < number; i++ ) {
         const div = document.createElement('div');
 
         div.classList.add(`blue${i}`)
@@ -10,8 +10,8 @@ function appendDiv(number) {
 }
 
 function appendAnotherDiv(number) {
-    for (i = 0; i < number; i++) {        
-        for ( j = 0; j < number; j++) {
+    for ( let i = 0; i < number; i++ ) {        
+        for ( let j = 0; j < number; j++ ) {
             const div = document.createElement('div');
 
             div.classList.add('lower');
@@ -21,5 +21,19 @@ function appendAnotherDiv(number) {
     }
 }
 
-appendDiv(50);
-appendAnotherDiv(50);
+function clickChoose() {
+    const parentDiv = document.querySelector('.container');
+    const childDivs = document.querySelectorAll('.upper');
+
+    for ( i = 0; i < childDivs.length; i++ ) {
+        parentDiv.removeChild(childDivs[i]);
+    }
+
+    let userChoice = prompt('choose', 5);
+    appendDiv(userChoice);
+    appendAnotherDiv(userChoice);
+}
+
+const choice = document.querySelector('.choice');
+
+choice.addEventListener('click', clickChoose);
