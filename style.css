@@ -13,12 +13,7 @@
 }
 
 .lower {
-    background: beige;
     height: 30px;
     width: 30px;
     margin: 2px;
-}
-
-.lower:hover {
-    background: red;
 }

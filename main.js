@@ -10,10 +10,14 @@ function appendDiv(number) {
 }
 
 function appendAnotherDiv(number) {
+    let color = getRandomRgbColor();
+    let paintColor = getRandomRgbColor();
     for ( let i = 0; i < number; i++ ) {        
         for ( let j = 0; j < number; j++ ) {
             const div = document.createElement('div');
-
+            
+            div.style.backgroundColor = color;
+            div.addEventListener('mouseover', () => div.style.backgroundColor = paintColor);
             div.classList.add('lower');
 
             document.querySelector(`.blue${i}`).append(div);
@@ -32,6 +36,13 @@ function clickChoose() {
     let userChoice = prompt('choose', 5);
     appendDiv(userChoice);
     appendAnotherDiv(userChoice);
+}
+
+function getRandomRgbColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
 const choice = document.querySelector('.choice');
